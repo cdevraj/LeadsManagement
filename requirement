@@ -31,3 +31,5 @@ DB
 User
  LeadGenerator has many leads and belongs to Lead 
  Manager
+
+ l.assign_attributes("first_name"=>'User', "last_name"=>'lastname', "email"=>'email1@testing.com', "email2"=>'email2@testing.com', "phone_number"=>'123456789', "phone_number2"=>'234567864', "category"=>'testinmg', "company_url"=>'ww.com', "about_me"=>"tset", "status"=>"sappod", "comment"=>"somded")
