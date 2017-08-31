@@ -1,0 +1,3 @@
+class LeadManager < ApplicationRecord
+  
+end
