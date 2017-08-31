@@ -3,20 +3,23 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Leads count</th>
-      <th>Assign to </th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% current_user.lead_generators.each do |user| %>
+    <% current_user.lead_generators.each do |lead_generator| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.leads.pluck(:first_name) %></td>
+        <td><%= lead_generator.name %></td>
+        <td><%= lead_generator.email %></td>
+        <td>
+        	<%= form_for lead_generator, url: '/update_manager', method: 'put' do %>
+        	  <%= hidden_field_tag :id, lead_generator.id %>
+        		<%= select("update_manager", "parent_id", Users::Manager.all.map {|a| [a.name, a.id] }) %>
+        		<%= submit_tag "Submit" %>
+        	 <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to "Create a Lead", parent_child_path(@parent, @child) %>

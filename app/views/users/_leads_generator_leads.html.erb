@@ -1,7 +1,7 @@
 <p> Your Manager is <cite><b><%= current_user.manager.name %></b></cite> </p>
 <table>
   <thead>
-    <tr>
+    <tr style="outline: thin solid">
 			<th>first_name</th>
 			<th>last_name</th>
 			<th>email</th>
@@ -19,7 +19,7 @@
 
   <tbody>
 		<% current_user.leads.each do |lead| %>
-      <tr>
+      <tr style="outline: thin solid">
 			<td> <%= lead.first_name %></td>
 			<td> <%= lead.last_name %></td>
 			<td> <%= lead.email %></td>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :update_manager]
 
   # GET /users
   # GET /users.json
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to @user, notice: 'Thank you for signing up' }
+        format.html { redirect_to root_url, notice: 'Thank you for signing up' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -61,6 +61,11 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User Logged out.' }
       format.json { head :no_content }
     end
+  end
+
+  def update_manager
+    @user.update_attributes(parent_id: params['update_manager'][:parent_id])
+    redirect_to root_url
   end
 
   private

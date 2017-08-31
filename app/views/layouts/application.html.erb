@@ -15,9 +15,10 @@
       <% end %>
     </div>
 		<% if current_user %>
+      <%= link_to 'Home page', root_url %> |
 		  <%= link_to 'Logout', logout_path %>
 		<% else %>
-		  <%= link_to "Sign Up", signup_path %>
+		  <%= link_to "Sign Up", signup_path %> |
 		  <%= link_to "Log In", login_path %>        
 		<% end %>
     <%= yield %>
