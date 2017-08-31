@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831102906) do
-
-  create_table "lead_managers", force: :cascade do |t|
-    t.integer "lead_generator_id"
-    t.integer "manager_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170831104407) do
 
   create_table "leads", force: :cascade do |t|
     t.string "first_name"
