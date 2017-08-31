@@ -3,5 +3,5 @@
 <% if  current_user && current_user.is_manager? %>
   <%= render partial: 'manager_leads' %>
 <% else %>
- <%=  "tsetesteste -- " %>
+ <%= render partial: 'leads_generator_leads' %>
 <% end %>
