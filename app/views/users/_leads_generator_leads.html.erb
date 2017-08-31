@@ -1,3 +1,4 @@
+<p> Your Manager is <cite><b><%= current_user.manager.name %></b></cite> </p>
 <table>
   <thead>
     <tr>
@@ -17,7 +18,7 @@
   </thead>
 
   <tbody>
-		<%= current_user.leads.each do |lead| %>
+		<% current_user.leads.each do |lead| %>
       <tr>
 			<td> <%= lead.first_name %></td>
 			<td> <%= lead.last_name %></td>
@@ -34,4 +35,5 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to "Create New Lead", new_lead_path %>
 	

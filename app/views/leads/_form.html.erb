@@ -1,0 +1,28 @@
+<%= form_for :lead, :url => '/leads' do |f| %>
+
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name %>
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	<%= f.label :email2 %>
+	<%= f.text_field :email2 %>
+	<%= f.label :phone_number %>
+	<%= f.text_field :phone_number %>
+	<%= f.label :phone_number2 %>
+	<%= f.text_field :phone_number2 %>
+	<%= f.label :category %>
+	<%= f.text_field :category %>
+	<%= f.label :company_url %>
+	<%= f.text_field :company_url %>
+	<%= f.label :about_me %>
+	<%= f.text_area :about_me %>
+	<%= f.label :status %>
+	<%= f.text_area :status %>
+	<%= f.label :comment %>
+	<%= f.text_area :comment %>	
+	<%= f.hidden_field :lead_id, value: current_user.id %>
+  <br>
+	<%= f.submit %>
+<% end %>

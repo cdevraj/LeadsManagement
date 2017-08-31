@@ -18,6 +18,19 @@ note: We need to send only text email
 # Manager can see all communication history of lead 
 # Manager can enter notes for lead
 
+
+first_name
+last_name
+email
+email2
+phone_number
+phone_number2
+category
+company_url
+about_me
+status
+comment
+
 User Type: Admin
 # Admin dashboard
 
